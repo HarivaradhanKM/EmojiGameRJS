@@ -55,15 +55,15 @@ class EmojiGame extends Component {
         this.finishGameAndSetTopScore(emojisList.length)
       }
       this.setState(previousState => ({
-        clickedEmojisList: [...previousState.clickedEmojisList.id],
+        clickedEmojisList: [...previousState.clickedEmojisList, id],
       }))
     }
   }
 
   getShuffledEmojisList = () => {
-    const {emojiList} = this.props
+    const {emojisList} = this.props
 
-    return emojiList.sort(() => Math.random() - 0.5)
+    return emojisList.sort(() => Math.random() - 0.5)
   }
 
   renderEmojisList = () => {
